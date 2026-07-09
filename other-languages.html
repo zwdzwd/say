@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReadAloud</title>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;
+    font:16px/1.5 ui-sans-serif,system-ui,sans-serif;background:#151515;color:#f1eee8}
+  form{display:flex;flex-direction:column;gap:.7rem;width:min(88vw,320px);text-align:center}
+  h1{font-size:1.2rem;margin:0 0 .3rem}
+  input{padding:.7rem .8rem;font-size:1rem;border-radius:.5rem;border:1px solid #3a332b;
+    background:#202020;color:inherit}
+  button{padding:.7rem;font-size:1rem;border:0;border-radius:.5rem;background:#f3b266;
+    color:#151515;font-weight:700}
+  #err{color:#f37b6b;min-height:1.2em;font-size:.9rem}
+</style></head><body>
+<form id="f">
+  <h1>🔒 ReadAloud</h1>
+  <input id="p" type="password" placeholder="passcode" autofocus autocomplete="current-password">
+  <button type="submit">Open</button>
+  <div id="err"></div>
+</form>
+<script>
+const SALT="kv23em2+Y7KIR6I5YLQQ2w==", IV="jV6nePBnKYOmfw+ODanRyw==", CT="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", ITERS=200000;
+const raw = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function decrypt(pass) {
+  const km = await crypto.subtle.importKey("raw", new TextEncoder().encode(pass),
+    "PBKDF2", false, ["deriveBits"]);
+  const bits = await crypto.subtle.deriveBits(
+    {name:"PBKDF2", salt:raw(SALT), iterations:ITERS, hash:"SHA-256"}, km, 256);
+  const key = await crypto.subtle.importKey("raw", bits, {name:"AES-CBC"}, false, ["decrypt"]);
+  const pt = await crypto.subtle.decrypt({name:"AES-CBC", iv:raw(IV)}, key, raw(CT));
+  return new TextDecoder().decode(pt);
+}
+async function tryPass(pass, remember) {
+  try {
+    const doc = await decrypt(pass);
+    if (remember) sessionStorage.setItem("ra_pass", pass);
+    document.open(); document.write(doc); document.close();
+  } catch (e) {
+    sessionStorage.removeItem("ra_pass");
+    document.getElementById("err").textContent = "Wrong passcode";
+  }
+}
+addEventListener("DOMContentLoaded", () => {
+  const cached = sessionStorage.getItem("ra_pass");
+  if (cached) tryPass(cached, false);
+  document.getElementById("f").addEventListener("submit", e => {
+    e.preventDefault(); tryPass(document.getElementById("p").value, true);
+  });
+});
+</script></body></html>
