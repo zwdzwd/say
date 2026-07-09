@@ -50,8 +50,10 @@ a { color: var(--accent); }
   gap: 1rem;
   align-items: center;
   padding: .8rem max(1rem, calc((100vw - 980px) / 2));
+  background: var(--bg);  /* fallback where color-mix is unsupported */
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -164,7 +166,7 @@ code {
 .review {
   display: none;
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;  /* explicit for older mobile Safari (no inset) */
   z-index: 5;
   overflow-y: auto;
   background: var(--bg);
