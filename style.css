@@ -160,6 +160,35 @@ code {
   font-size: .9em;
 }
 
+/* random-30 review overlay */
+.review {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  overflow-y: auto;
+  background: var(--bg);
+  padding: 0 1rem 4rem;
+}
+.review.show { display: block; }
+.review-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  padding: .8rem 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.review-bar strong { flex: 1 1 auto; }
+.review ol {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 0 0 1.6rem;
+}
+.review li { margin: 1rem 0; }
+
 .table-wrap {
   overflow-x: auto;
   margin: 1rem 0;
