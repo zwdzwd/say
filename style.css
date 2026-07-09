@@ -1,0 +1,122 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fbf7ef;
+  --card: #fffdf8;
+  --text: #1f2933;
+  --muted: #637083;
+  --accent: #8a4b18;
+  --border: #eadfce;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151515;
+    --card: #202020;
+    --text: #f1eee8;
+    --muted: #b8b0a4;
+    --accent: #f3b266;
+    --border: #3a332b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 18px/1.65 ui-serif, Georgia, "Times New Roman", serif;
+}
+
+a { color: var(--accent); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: .8rem max(1rem, calc((100vw - 980px) / 2));
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  flex: 0 0 auto;
+  font: 700 1rem/1 ui-sans-serif, system-ui, sans-serif;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: .35rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+nav a {
+  padding: .25rem .55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  font: 600 .82rem/1.4 ui-sans-serif, system-ui, sans-serif;
+  text-decoration: none;
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2rem, 8vw, 4.2rem); margin: 1.3rem 0 1rem; }
+h2 { margin-top: 2.5rem; padding-top: .4rem; border-top: 1px solid var(--border); }
+
+p, li {
+  overflow-wrap: anywhere;
+}
+
+li { margin: .45rem 0; }
+
+strong {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+code {
+  padding: .1rem .3rem;
+  border-radius: .25rem;
+  background: var(--border);
+  font-size: .9em;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+}
+
+td, th {
+  padding: .5rem .65rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (max-width: 620px) {
+  body { font-size: 17px; }
+  .site-header { align-items: flex-start; flex-direction: column; gap: .55rem; }
+  nav { width: 100%; }
+}
