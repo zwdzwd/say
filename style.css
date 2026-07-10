@@ -189,7 +189,14 @@ code {
   margin: 0 auto;
   padding: 1rem 0 0 1.6rem;
 }
-.review li { margin: 1rem 0; }
+.review li { margin: 1rem 0; cursor: pointer; }
+.review li.mark {
+  background: var(--hl);
+  border-left: 4px solid var(--accent);
+  padding: .15rem .4rem;
+  border-radius: .2rem;
+  color: var(--text);
+}
 
 .table-wrap {
   overflow-x: auto;
