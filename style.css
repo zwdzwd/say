@@ -184,6 +184,14 @@ code {
   border-bottom: 1px solid var(--border);
 }
 .review-bar strong { flex: 1 1 auto; }
+.pool {
+  font: 600 .82rem/1 ui-sans-serif, system-ui, sans-serif;
+  padding: .3rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+}
 .review ol {
   max-width: 980px;
   margin: 0 auto;
