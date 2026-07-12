@@ -149,8 +149,15 @@ p, li {
 
 li { margin: .45rem 0; }
 
-/* bookmarks: tap a sentence to toggle */
-li[data-b], p[data-b] { cursor: pointer; }
+/* tap targets: single-tap toggle. touch-action: manipulation disables the
+   double-tap-to-zoom gesture that otherwise swallows a quick second tap (so
+   tapping a highlighted line again to un-highlight had no effect on mobile). */
+li[data-b], p[data-b], .review li {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
 li.bm, p.bm {
   background: var(--hl);
   border-left: 4px solid var(--accent);
