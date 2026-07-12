@@ -7,6 +7,10 @@
   --accent: #8a4b18;
   --border: #eadfce;
   --hl: #ffd24d;
+  /* modern system CJK fonts (no download); appended after Latin fonts so the
+     browser picks per glyph — Latin stays serif, Chinese renders as clean sans */
+  --cjk: "PingFang SC", "PingFang TC", "Hiragino Sans GB", "Microsoft YaHei",
+         "Noto Sans SC", "Noto Sans CJK SC", "Heiti SC";
 }
 
 :root[data-theme="dark"] {
@@ -37,7 +41,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 18px/1.65 ui-serif, Georgia, "Times New Roman", serif;
+  font: 18px/1.65 ui-serif, Georgia, "Times New Roman", var(--cjk), serif;
 }
 
 a { color: var(--accent); }
@@ -205,7 +209,15 @@ code {
   border-radius: .2rem;
   color: var(--text);
 }
-.review li.char { font-size: 2.6rem; text-align: center; }
+/* sampled Chinese items: big adaptive headword, 组词 beneath */
+.review li.cjk { font-size: clamp(1.05rem, 2.4vw, 1.7rem); }
+.review li.cjk strong {
+  display: block;
+  color: var(--text);
+  font-size: clamp(2.6rem, 9vw, 6rem);
+  line-height: 1.15;
+  margin-bottom: .2rem;
+}
 
 .table-wrap {
   overflow-x: auto;
