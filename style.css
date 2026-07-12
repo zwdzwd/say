@@ -197,6 +197,7 @@ code {
   border-radius: .2rem;
   color: var(--text);
 }
+.review li.char { font-size: 2.6rem; text-align: center; }
 
 .table-wrap {
   overflow-x: auto;
