@@ -179,6 +179,41 @@ code {
   font-size: .9em;
 }
 
+/* daily review page */
+.muted { color: var(--muted); font-size: .9rem; }
+.person h2 {
+  font: 700 1.25rem/1.2 ui-sans-serif, system-ui, var(--cjk), sans-serif;
+  margin: 1.6rem 0 .3rem;
+  padding-top: .6rem;
+  border-top: 1px solid var(--border);
+}
+.person li {
+  margin: .7rem 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.person li.mark {
+  background: var(--hl);
+  border-left: 4px solid var(--accent);
+  padding: .15rem .4rem;
+  border-radius: .2rem;
+}
+.person li.cjk strong { font-size: clamp(1.6rem, 4.5vw, 2.6rem); }
+.tag {
+  display: inline-block;
+  font: 700 .62rem/1.7 ui-sans-serif, system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 0 .45rem;
+  margin-right: .4rem;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--muted);
+  vertical-align: middle;
+}
+
 /* random-30 review overlay */
 .review {
   display: none;
