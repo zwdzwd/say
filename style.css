@@ -183,8 +183,6 @@ code {
 
 
 /* a drawn pattern: the phrase, then the examples that use it */
-.pat { font-weight: 600; font-size: 1.02rem; color: var(--accent); }
-.pat .tagged { font-weight: 400; }
 .ex { margin: .3rem 0 0 0; line-height: 1.55; }
 details.src { margin-top: .4rem; }
 details.src > summary { cursor: pointer; color: var(--muted); font-size: .82rem; }
