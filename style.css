@@ -183,21 +183,25 @@ code {
 
 
 /* a drawn pattern: the phrase, then the examples that use it */
-.ex { margin: .3rem 0 0 0; line-height: 1.55; }
+.ex { margin: 0; line-height: 1.42; }
+.ex + .ex { margin-top: .12rem; }
 details.src { margin-top: .4rem; }
 details.src > summary { cursor: pointer; color: var(--muted); font-size: .82rem; }
 details.src > div { margin-top: .3rem; color: var(--muted); font-size: .92rem; }
 
+h1.tight { font-size: 1.5rem; margin: .2rem 0 .1rem; }
+.muted.tiny { font-size: .8rem; margin: 0 0 .2rem; }
+.tagged { margin-left: .35em; }
 /* daily review page */
 .muted { color: var(--muted); font-size: .9rem; }
 .person h2 {
-  font: 700 1.25rem/1.2 ui-sans-serif, system-ui, var(--cjk), sans-serif;
-  margin: 1.6rem 0 .3rem;
-  padding-top: .6rem;
+  font: 700 1.05rem/1.2 ui-sans-serif, system-ui, var(--cjk), sans-serif;
+  margin: .9rem 0 .2rem;
+  padding-top: .4rem;
   border-top: 1px solid var(--border);
 }
 .person li {
-  margin: .7rem 0;
+  margin: .34rem 0;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-user-select: none;
