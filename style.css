@@ -192,6 +192,9 @@ details.src > div { margin-top: .3rem; color: var(--muted); font-size: .92rem; }
 h1.tight { font-size: 1.5rem; margin: .2rem 0 .1rem; }
 .muted.tiny { font-size: .8rem; margin: 0 0 .2rem; }
 .tagged { margin-left: .35em; }
+.see { margin-top: .16rem; font-size: .93em; }
+.see .alt { color: var(--muted); }
+.see .alt::before { content: "≈ "; color: var(--accent); }
 /* daily review page */
 .muted { color: var(--muted); font-size: .9rem; }
 .person h2 {
